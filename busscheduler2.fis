@@ -1,0 +1,33 @@
+[System]
+Name='busscheduler2'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='lom'
+
+[Input1]
+Name='people count'
+Range=[0 100]
+NumMFs=3
+MF1='less':'linzmf',[10 20]
+MF2='moderate':'trimf',[10 25 40]
+MF3='overload':'linsmf',[25 40]
+
+[Output1]
+Name='dispatch interval'
+Range=[0 30]
+NumMFs=3
+MF1='short':'linzmf',[11 20]
+MF2='moderate':'trimf',[10 20 30]
+MF3='long':'linsmf',[20 30]
+
+[Rules]
+1, 3 (1) : 1
+2, 2 (1) : 1
+3, 1 (1) : 1

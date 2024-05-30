@@ -1,0 +1,13 @@
+train: People.v1i.yolov8/train/images
+val: People.v1i.yolov8/valid/images
+test: People.v1i.yolov8/test/images
+
+nc: 1
+names: ['people']
+
+roboflow:
+  workspace: luca-vziny
+  project: people-4evn7
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/luca-vziny/people-4evn7/dataset/1
